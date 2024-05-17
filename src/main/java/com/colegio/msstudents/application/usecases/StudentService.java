@@ -8,6 +8,7 @@ import reactor.core.publisher.Mono;
 public interface StudentService {
 
     Mono<Void> createNewStudent(StudentRequest studentRequest);
-    Flux<StudentDto> getAllStudentStatusActive();
+    Flux<StudentDto> getAllStudentStatusActive(String status);
+
 
 }

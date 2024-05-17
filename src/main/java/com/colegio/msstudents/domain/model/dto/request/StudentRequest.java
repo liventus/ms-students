@@ -6,6 +6,7 @@ import jakarta.validation.Valid;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
 import lombok.*;
 
 @AllArgsConstructor
@@ -14,7 +15,8 @@ import lombok.*;
 @Setter
 public class StudentRequest {
 
-
+    @NotNull
+    @NotBlank
     private String id;
 
     @NotNull
@@ -27,6 +29,7 @@ public class StudentRequest {
 
     @NotNull
     @NotBlank
+    @Pattern(regexp = "^(activo|inactivo)$", message = "Status must be either 'activo' or 'inactivo'")
     private String status;
 
 

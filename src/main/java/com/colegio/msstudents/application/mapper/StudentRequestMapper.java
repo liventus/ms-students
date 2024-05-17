@@ -12,6 +12,7 @@ public interface StudentRequestMapper {
     @Mapping(source = "lastName", target = "lastName")
     @Mapping(source = "name", target = "name")
     @Mapping(source = "age", target = "age")
+    @Mapping(source = "status", target = "status")
     Student toDomain(StudentRequest request);
 }
 

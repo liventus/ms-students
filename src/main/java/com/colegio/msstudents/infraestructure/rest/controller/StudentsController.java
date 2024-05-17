@@ -34,16 +34,15 @@ public class StudentsController {
         return studentService.createNewStudent(student);
     }
 
-    @GetMapping(value = "/{status}",produces = "application/json", consumes = "application/json")
+    @GetMapping(value = "/{status}",produces = "application/json")
     @ResponseStatus(HttpStatus.FOUND)
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "201",description = "usuario registrado correctamente"),
+            @ApiResponse(responseCode = "302",description = "datos traidos correctamente"),
             @ApiResponse(responseCode = "400",description = "Solicitud incorrecta"),
             @ApiResponse(responseCode = "500",description = "error en el servidor")
     })
     public Flux<StudentDto> getStudentActives(@Valid @PathVariable String status) {
-        System.out.println(status);
-        return studentService.getAllStudentStatusActive();
+        return studentService.getAllStudentStatusActive(status);
     }
 
 }

@@ -34,7 +34,7 @@ public class StudentManagementService implements StudentService {
     }
 
     @Override
-    public Flux<StudentDto> getAllStudentStatusActive() {
-        return studentPersistencePort.getAll().map(studentDtoMapper::toDto);
+    public Flux<StudentDto> getAllStudentStatusActive(String status) {
+        return studentPersistencePort.getByStatus(status).map(studentDtoMapper::toDto);
     }
 }

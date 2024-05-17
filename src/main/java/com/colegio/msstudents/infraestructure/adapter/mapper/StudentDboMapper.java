@@ -13,6 +13,7 @@ public interface StudentDboMapper {
     @Mapping(source = "id", target = "id")
     @Mapping(source = "name", target = "name")
     @Mapping(source = "age", target = "age")
+    @Mapping(source = "status", target = "status")
     StudentEntity toDbo(Student domain);
 
     @InheritInverseConfiguration

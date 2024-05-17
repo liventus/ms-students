@@ -12,6 +12,8 @@ public interface StudentPersistencePort {
 
     Flux<Student> getAll();
 
+    Flux<Student> getByStatus(String status);
+
 
 
 

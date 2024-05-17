@@ -35,4 +35,9 @@ public class StudentSpringJpaAdapter implements StudentPersistencePort {
     public Flux<Student> getAll() {
         return studentRepository.findAll().map(studentDboMapper::toDomain);
     }
+
+    @Override
+    public Flux<Student> getByStatus(String status) {
+        return studentRepository.findByStatus(status).map(studentDboMapper::toDomain);
+    }
 }
