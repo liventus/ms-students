@@ -10,8 +10,6 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 @ControllerAdvice
 public class MyControllerAdvice {
 
-
-
     @ExceptionHandler(StudentException.class)
     public ResponseEntity<String> handleEmptyInput(StudentException emptyInputException){
         return new ResponseEntity<String>(emptyInputException.getErrorMessage(), emptyInputException.getErrorCode());

@@ -27,8 +27,8 @@ public class StudentSpringJpaAdapter implements StudentPersistencePort {
 
     @Override
     public Mono<Void> create(Student student) {
+        return studentRepository.insert(studentDboMapper.toDbo(student)).then();
 
-        return studentRepository.save(studentDboMapper.toDbo(student)).then();
     }
 
     @Override
